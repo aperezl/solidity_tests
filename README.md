@@ -13,4 +13,7 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
-# solidity_tests
+# Basic Sample Hardhat Project
+
+
+Implementation in HardHat of the exercises of the Solidity course of [Smart Contract Programmer](https://www.youtube.com/watch?v=xv9OmztShIw&list=PLO5VPQH6OWdVQwpQfw9rZ67O6Pjfo6q-p)
