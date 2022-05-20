@@ -1,10 +1,9 @@
 const { expect } = require("chai");
-const { ethers } = require("hardhat");
+const { makeSut } = require('./util')
 
 describe('ValueTypes', () => {
   it('deploy contract', async () => {
-    const ValueTypes = await ethers.getContractFactory('ValueTypes')
-    const sut = await ValueTypes.deploy()
+    const { sut } = await makeSut('ValueTypes')
     expect(await sut.b()).to.equal(true)
     expect(await sut.u()).to.equal(123);
     expect(await sut.i()).to.equal(-123);

@@ -1,17 +1,10 @@
 const { expect } = require("chai");
-const { ethers } = require("hardhat");
+const { makeSut } = require('./util')
 
-const makeSut = async () => {
-  const Sut = await ethers.getContractFactory('DefaultValues')
-  const sut = await Sut.deploy()
-  return {
-    sut
-  }
-}
 describe('DefaultValues', () => {
   
   it('test', async () => {
-    const { sut } = await makeSut()
+    const { sut } = await makeSut('DefaultValues')
     expect(await sut.b()).to.equal(false)
     expect(await sut.u()).to.equal(0)
     expect(await sut.i()).to.equal(0)

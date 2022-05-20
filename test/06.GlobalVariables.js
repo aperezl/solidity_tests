@@ -1,17 +1,10 @@
 const { expect } = require("chai");
-const { ethers } = require("hardhat");
+const { makeSut } = require('./util')
 
-const makeSut = async () => {
-  const Sut = await ethers.getContractFactory('GlobalVariables')
-  const sut = await Sut.deploy()
-  return {
-    sut
-  }
-}
 
 describe('GlobalVariables', () => {
   it('test', async () => {
-    const { sut } = await makeSut()
+    const { sut } = await makeSut('GlobalVariables')
     const [sender, timestamp, blockNum] = await sut.globalVars()
     expect(sender).to.exist
     expect(timestamp).to.exist
