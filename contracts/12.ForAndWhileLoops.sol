@@ -11,5 +11,18 @@ contract ForAndWhileLoops {
         break;
       }
     }
+
+    uint j = 0;
+    while (true) {
+      j++;
+    }
+  }
+
+  function sum(uint _n) external pure returns(uint) {
+    uint s;
+    for (uint i = 0; i <= _n; i++) {
+      s += i;
+    }
+    return s;
   }
 }
