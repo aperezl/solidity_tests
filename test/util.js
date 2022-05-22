@@ -1,9 +1,9 @@
 const { ethers } = require("hardhat");
 const crypto = require('crypto')
 module.exports = {
-   makeSut: async (contract) => {
+   makeSut: async (contract, options = []) => {
     const Sut = await ethers.getContractFactory(contract)
-    const sut = await Sut.deploy()
+    const sut = await Sut.deploy(...options)
     return {
       sut
     }
