@@ -23,6 +23,12 @@ contract FunctionModifier {
     _;
   }
 
+  modifier sandwich() {
+    count += 10;
+    _;
+    count *= 2;
+  }
+
   function inc() external whenNotPause {
     count += 1;
   }
@@ -33,6 +39,10 @@ contract FunctionModifier {
 
   function incBy(uint _x) external whenNotPause cap(_x) {
     count += _x;
+  }
+
+  function foo() external sandwich {
+    count += 1;
   }
 
   function getCount() external view returns (uint) {

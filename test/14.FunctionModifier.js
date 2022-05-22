@@ -46,4 +46,11 @@ describe.only('FunctionModifier ', () => {
     const { sut } = await makeSut('FunctionModifier', [100])
     await expect(sut.incBy(110)).to.revertedWith('x >= 100')
   })
+
+   it('sandwich', async () => {
+    const { sut } = await makeSut('FunctionModifier', [0])
+    await sut.foo()
+    const result = await sut.getCount()
+    expect(result).to.equal(22)
+  })
 })
