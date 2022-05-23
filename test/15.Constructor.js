@@ -1,7 +1,7 @@
 const { expect } = require("chai");
-const { makeSut, getAccountByIndex, getAccounts } = require('./util')
+const { makeSut, getAccountByIndex } = require('./util')
 
-describe.only('Constructor ', () => {
+describe('Constructor ', () => {
   
   it('test', async () => {
     const { sut } = await makeSut('Constructor', [0])
