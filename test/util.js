@@ -16,5 +16,14 @@ module.exports = {
       privateKey,
       wallet
     }
+  },
+  getAccounts: async () => {
+    const accounts = await ethers.getSigners()
+    return await ethers.getSigners(); 
+  },
+  getAccountByIndex: async index => {
+    const accounts = await ethers.getSigners()
+    const account = accounts[index]
+    return account
   }
 }

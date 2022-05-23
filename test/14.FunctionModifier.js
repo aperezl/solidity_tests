@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { makeSut } = require('./util')
 
-describe.only('FunctionModifier ', () => {
+describe('FunctionModifier ', () => {
   
   it('should inc counter when not paused', async () => {
     const { sut } = await makeSut('FunctionModifier', [5])
