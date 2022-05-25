@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { makeSut } = require('./util')
+const { makeSut } = require('../util')
 
 describe('ForAndWhileLoops ', () => {
   

@@ -1,7 +1,7 @@
 const { expect } = require("chai");
-const { makeSut } = require('./util')
+const { makeSut } = require('../util')
 
-describe.only('Array ', () => {
+describe('Array ', () => {
   
   it('push', async () => {
     const { sut } = await makeSut('Array')
