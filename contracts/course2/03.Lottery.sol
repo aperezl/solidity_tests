@@ -48,4 +48,15 @@ contract Lottery {
     return (result, wNum);
   }
 
+  function getAward() public view returns(uint256) {
+    return address(this).balance - (num * (price / 2));
+  }
+
+  function withdrawBalance() external returns(uint256) {
+    require(msg.sender == owner, "not owner");
+    require(game == false, "game is not finished");
+    payable(msg.sender).transfer(address(this).balance);
+    return address(this).balance;
+  }
+
 }
