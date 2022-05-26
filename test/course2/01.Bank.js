@@ -2,7 +2,6 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 const { makeSut, getAccounts } = require('../util')
 
-
 describe('01.Bank', () => {
   it('ensure only owner can withdrawBalance', async () => {
     const { sut } = await makeSut('Bank')
